@@ -1,0 +1,23 @@
+function reset() {
+var tabs = [
+        'Monday',
+        'Tuesday',
+        'Wednesday',
+        'Thursday',
+        'Friday'
+    ];
+var ss=SpreadsheetApp.getActiveSpreadsheet(); // ss is the entire spreadsheet document
+  for (var i = 0; i < tabs.length; i++) {
+    var sheet=ss.getSheetByName(tabs[i]); // this loops through the tabs of ss, calling each one sheet
+    sheet.getRange('D3:D42').setValue(false);
+    sheet.getRange('G3:G42').setValue(false);
+    sheet.getRange('J3:J42').setValue(false);
+    sheet.getRange('M3:M42').setValue(false);
+  }
+var sheet = ss.getSheetByName('Saturday')
+sheet.getRange('D3:D42').setValue(false);
+
+var sheet = ss.getSheetByName('Sunday')
+sheet.getRange('D3:D42').setValue(false);
+sheet.getRange('G3:G42').setValue(false);
+}
